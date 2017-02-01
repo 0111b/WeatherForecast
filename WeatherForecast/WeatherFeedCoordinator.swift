@@ -9,16 +9,22 @@
 import UIKit
 
 final class WeatherFeedCoordinator: NavigationCooridator {
-    init(window: UIWindow) {
+    init(window: UIWindow, dataFetcher: DataFetcher) {
         rootWindow = window
+        fetcher = dataFetcher
     }
+    
+    let fetcher: DataFetcher
+    private unowned let rootWindow: UIWindow
     
     func showDayDetails() {
         
     }
     
     func start() {
-        let feedController = FeedViewController(coordinator: self)
+        let city = "London"
+        let days = 7
+        let feedController = FeedViewController(coordinator: self, city: city, limit: days)
         let navigationController = UINavigationController(rootViewController: feedController)
         rootWindow.rootViewController = navigationController        
     }
@@ -31,7 +37,5 @@ final class WeatherFeedCoordinator: NavigationCooridator {
     func removeChild(coordinator: NavigationCooridator) {
         //TODO: implement
     }
-    
-    private unowned let rootWindow: UIWindow
-    
+            
 }

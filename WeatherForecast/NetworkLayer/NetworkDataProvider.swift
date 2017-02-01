@@ -10,6 +10,8 @@ import Foundation
 
 final class NetworkDataProvider {
     
+    //TODO: extend to support all HTTP methods
+    
     enum NetworkError: Error {
         /// general unhandled error
         case unknown(underlying: Error)
@@ -21,6 +23,7 @@ final class NetworkDataProvider {
         case badResponse(details: Any)
     }
 
+    ///GET request
     @discardableResult
     func get<Response>(url urlString: String,
                      parameters: [String: String] = [:],
@@ -45,15 +48,19 @@ final class NetworkDataProvider {
         return request(req, map: mapping, completion: completion)
     }
 
+    /// Execute request
     @discardableResult
     func request<Response>(_ request: URLRequest,
                      map mapping: @escaping Mapping<Response>,
                      completion: @escaping (FetchResult<Response>) -> Void
                      ) -> Cancelable {
-        //TODO: Increment activity count
+        NetworkActivityIndicatorManager.shared.incrementActivityCount()
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
             let result = NetworkDataProvider.serialize(mapping: mapping, data: data, response: response, error: error)
-            completion(result)
+            NetworkActivityIndicatorManager.shared.decrementActivityCount()
+            DispatchQueue.main.async {
+                completion(result)
+            }
         })
         task.resume()
         return task

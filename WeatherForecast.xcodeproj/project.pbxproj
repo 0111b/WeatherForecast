@@ -16,6 +16,11 @@
 		E6CA036C1E418E4400EFF4BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6CA03521E4179AD00EFF4BB /* LaunchScreen.storyboard */; };
 		E6CA03721E420BD500EFF4BB /* NetworkDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA03711E420BD500EFF4BB /* NetworkDataProvider.swift */; };
 		E6CA03751E420E8F00EFF4BB /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA03741E420E8F00EFF4BB /* Common.swift */; };
+		E6CA03771E422EDA00EFF4BB /* DataFetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA03761E422EDA00EFF4BB /* DataFetchRequest.swift */; };
+		E6CA037E1E424A3800EFF4BB /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA037D1E424A3800EFF4BB /* Forecast.swift */; };
+		E6CA03801E424CF800EFF4BB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA037F1E424CF800EFF4BB /* API.swift */; };
+		E6CA03821E42541700EFF4BB /* NetworkActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA03811E42541700EFF4BB /* NetworkActivityIndicatorManager.swift */; };
+		E6CA03841E4254C600EFF4BB /* FetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA03831E4254C600EFF4BB /* FetchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 		E6CA036A1E418B6000EFF4BB /* FeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
 		E6CA03711E420BD500EFF4BB /* NetworkDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDataProvider.swift; sourceTree = "<group>"; };
 		E6CA03741E420E8F00EFF4BB /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		E6CA03761E422EDA00EFF4BB /* DataFetchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFetchRequest.swift; sourceTree = "<group>"; };
+		E6CA037D1E424A3800EFF4BB /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		E6CA037F1E424CF800EFF4BB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		E6CA03811E42541700EFF4BB /* NetworkActivityIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicatorManager.swift; sourceTree = "<group>"; };
+		E6CA03831E4254C600EFF4BB /* FetchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +75,12 @@
 			isa = PBXGroup;
 			children = (
 				E6CA03491E4179AD00EFF4BB /* AppDelegate.swift */,
-				E6CA03661E41829B00EFF4BB /* WeatherFeedCoordinator.swift */,
 				E6CA035C1E41802500EFF4BB /* Common */,
+				E6CA03661E41829B00EFF4BB /* WeatherFeedCoordinator.swift */,
+				E6CA037C1E424A0900EFF4BB /* Models */,
+				E6CA03701E420BBC00EFF4BB /* NetworkLayer */,
 				E6CA035D1E41802500EFF4BB /* ViewControllers */,
 				E6CA036F1E41F15F00EFF4BB /* Views */,
-				E6CA03701E420BBC00EFF4BB /* NetworkLayer */,
 				E6CA03501E4179AD00EFF4BB /* Assets.xcassets */,
 				E6CA03521E4179AD00EFF4BB /* LaunchScreen.storyboard */,
 				E6CA03551E4179AE00EFF4BB /* Info.plist */,
@@ -105,9 +116,21 @@
 		E6CA03701E420BBC00EFF4BB /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				E6CA037F1E424CF800EFF4BB /* API.swift */,
+				E6CA03761E422EDA00EFF4BB /* DataFetchRequest.swift */,
 				E6CA03711E420BD500EFF4BB /* NetworkDataProvider.swift */,
+				E6CA03811E42541700EFF4BB /* NetworkActivityIndicatorManager.swift */,
 			);
 			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		E6CA037C1E424A0900EFF4BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E6CA037D1E424A3800EFF4BB /* Forecast.swift */,
+				E6CA03831E4254C600EFF4BB /* FetchResult.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,7 +209,12 @@
 				E6CA03751E420E8F00EFF4BB /* Common.swift in Sources */,
 				E6CA03671E41829B00EFF4BB /* WeatherFeedCoordinator.swift in Sources */,
 				E6CA03691E418AFE00EFF4BB /* FeedViewController.swift in Sources */,
+				E6CA03801E424CF800EFF4BB /* API.swift in Sources */,
+				E6CA03841E4254C600EFF4BB /* FetchResult.swift in Sources */,
+				E6CA03821E42541700EFF4BB /* NetworkActivityIndicatorManager.swift in Sources */,
+				E6CA037E1E424A3800EFF4BB /* Forecast.swift in Sources */,
 				E6CA034A1E4179AD00EFF4BB /* AppDelegate.swift in Sources */,
+				E6CA03771E422EDA00EFF4BB /* DataFetchRequest.swift in Sources */,
 				E6CA03721E420BD500EFF4BB /* NetworkDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

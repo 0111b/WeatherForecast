@@ -10,8 +10,9 @@ import UIKit
 
 final class FeedViewController: UIViewController {
     
-    init(coordinator: WeatherFeedCoordinator) {
+    init(coordinator: WeatherFeedCoordinator, city: String, limit: Int) {
         navigationCoordinator = coordinator
+        request = API.DailyForecast(city: city, limit: limit)        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -19,8 +20,16 @@ final class FeedViewController: UIViewController {
         fatalError("\(#function) is not implemented")
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = request.city
+        navigationCoordinator.fetcher.fetch(request: request) { result in
+            print(result)
+        }
+    }
     
     @IBOutlet private(set) weak var tableView: UITableView?
+    private let request: API.DailyForecast
     fileprivate unowned let navigationCoordinator: WeatherFeedCoordinator
 }
 
