@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let rootWindow = UIWindow(frame: UIScreen.main.bounds)
         rootWindow.makeKeyAndVisible()
+        let apiKey = "0ca3d5502dce494c8bd95fa7123afe75"
+        let fetcher = NetworkDataProvider(apiKey: apiKey)
         window = rootWindow
         initialCoordinator = WeatherFeedCoordinator(window: rootWindow)
         initialCoordinator?.start()

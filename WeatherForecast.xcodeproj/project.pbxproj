@@ -14,6 +14,8 @@
 		E6CA03691E418AFE00EFF4BB /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA03681E418AFE00EFF4BB /* FeedViewController.swift */; };
 		E6CA036B1E418B6000EFF4BB /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6CA036A1E418B6000EFF4BB /* FeedViewController.xib */; };
 		E6CA036C1E418E4400EFF4BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6CA03521E4179AD00EFF4BB /* LaunchScreen.storyboard */; };
+		E6CA03721E420BD500EFF4BB /* NetworkDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA03711E420BD500EFF4BB /* NetworkDataProvider.swift */; };
+		E6CA03751E420E8F00EFF4BB /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA03741E420E8F00EFF4BB /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		E6CA03661E41829B00EFF4BB /* WeatherFeedCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFeedCoordinator.swift; sourceTree = "<group>"; };
 		E6CA03681E418AFE00EFF4BB /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		E6CA036A1E418B6000EFF4BB /* FeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
+		E6CA03711E420BD500EFF4BB /* NetworkDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDataProvider.swift; sourceTree = "<group>"; };
+		E6CA03741E420E8F00EFF4BB /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 				E6CA035C1E41802500EFF4BB /* Common */,
 				E6CA035D1E41802500EFF4BB /* ViewControllers */,
 				E6CA036F1E41F15F00EFF4BB /* Views */,
+				E6CA03701E420BBC00EFF4BB /* NetworkLayer */,
 				E6CA03501E4179AD00EFF4BB /* Assets.xcassets */,
 				E6CA03521E4179AD00EFF4BB /* LaunchScreen.storyboard */,
 				E6CA03551E4179AE00EFF4BB /* Info.plist */,
@@ -76,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				E6CA03641E4181B800EFF4BB /* NavigationCooridator.swift */,
+				E6CA03741E420E8F00EFF4BB /* Common.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -94,6 +100,14 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E6CA03701E420BBC00EFF4BB /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				E6CA03711E420BD500EFF4BB /* NetworkDataProvider.swift */,
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,9 +183,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6CA03651E4181B800EFF4BB /* NavigationCooridator.swift in Sources */,
+				E6CA03751E420E8F00EFF4BB /* Common.swift in Sources */,
 				E6CA03671E41829B00EFF4BB /* WeatherFeedCoordinator.swift in Sources */,
 				E6CA03691E418AFE00EFF4BB /* FeedViewController.swift in Sources */,
 				E6CA034A1E4179AD00EFF4BB /* AppDelegate.swift in Sources */,
+				E6CA03721E420BD500EFF4BB /* NetworkDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
