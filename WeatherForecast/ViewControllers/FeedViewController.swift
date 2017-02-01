@@ -125,6 +125,7 @@ extension FeedViewController: UITableViewDataSource {
 extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        navigationCoordinator.showDayDetails()
+        guard let forecast = itemFor(indexPath: indexPath) else { return }
+        navigationCoordinator.showForecastDetails(forecast)
     }
 }

@@ -23,6 +23,8 @@
 		E6CA03841E4254C600EFF4BB /* FetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA03831E4254C600EFF4BB /* FetchResult.swift */; };
 		E6CA03861E42682A00EFF4BB /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA03851E42682A00EFF4BB /* ForecastTableViewCell.swift */; };
 		E6CA03881E42686100EFF4BB /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6CA03871E42686100EFF4BB /* ForecastTableViewCell.xib */; };
+		E6CA038A1E42759400EFF4BB /* ForecastDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA03891E42759400EFF4BB /* ForecastDetailViewController.swift */; };
+		E6CA038C1E4275BF00EFF4BB /* ForecastDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6CA038B1E4275BF00EFF4BB /* ForecastDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		E6CA03831E4254C600EFF4BB /* FetchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResult.swift; sourceTree = "<group>"; };
 		E6CA03851E42682A00EFF4BB /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 		E6CA03871E42686100EFF4BB /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
+		E6CA03891E42759400EFF4BB /* ForecastDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDetailViewController.swift; sourceTree = "<group>"; };
+		E6CA038B1E4275BF00EFF4BB /* ForecastDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 			children = (
 				E6CA03681E418AFE00EFF4BB /* FeedViewController.swift */,
 				E6CA036A1E418B6000EFF4BB /* FeedViewController.xib */,
+				E6CA03891E42759400EFF4BB /* ForecastDetailViewController.swift */,
+				E6CA038B1E4275BF00EFF4BB /* ForecastDetailViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -201,6 +207,7 @@
 				E6CA03881E42686100EFF4BB /* ForecastTableViewCell.xib in Resources */,
 				E6CA036C1E418E4400EFF4BB /* LaunchScreen.storyboard in Resources */,
 				E6CA036B1E418B6000EFF4BB /* FeedViewController.xib in Resources */,
+				E6CA038C1E4275BF00EFF4BB /* ForecastDetailViewController.xib in Resources */,
 				E6CA03511E4179AD00EFF4BB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +227,7 @@
 				E6CA03801E424CF800EFF4BB /* API.swift in Sources */,
 				E6CA03841E4254C600EFF4BB /* FetchResult.swift in Sources */,
 				E6CA03821E42541700EFF4BB /* NetworkActivityIndicatorManager.swift in Sources */,
+				E6CA038A1E42759400EFF4BB /* ForecastDetailViewController.swift in Sources */,
 				E6CA037E1E424A3800EFF4BB /* Forecast.swift in Sources */,
 				E6CA034A1E4179AD00EFF4BB /* AppDelegate.swift in Sources */,
 				E6CA03771E422EDA00EFF4BB /* DataFetchRequest.swift in Sources */,

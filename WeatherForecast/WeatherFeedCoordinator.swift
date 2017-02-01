@@ -16,19 +16,25 @@ final class WeatherFeedCoordinator: NavigationCooridator {
     
     let fetcher: DataFetcher
     private unowned let rootWindow: UIWindow
-    
-    func showDayDetails() {
-        
-    }
+    private weak var navigationController: UINavigationController?
     
     func start() {
         let city = "London"
         let days = 7
         let feedController = FeedViewController(coordinator: self, city: city, limit: days)
         let navigationController = UINavigationController(rootViewController: feedController)
+        self.navigationController = navigationController
         rootWindow.rootViewController = navigationController        
     }
     
+    func showForecastDetails(_ forecast: Forecast) {
+        let detailsController = ForecastDetailViewController(coordinator: self, forecast: forecast)
+        navigationController?.pushViewController(detailsController, animated: true)
+    }
+
+    func returnFromProductDetails() {
+        navigationController?.popToRootViewController(animated: true)
+    }
     
     func addChild(coordinator: NavigationCooridator) {
         //TODO: implement

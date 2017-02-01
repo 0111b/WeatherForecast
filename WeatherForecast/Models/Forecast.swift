@@ -6,7 +6,7 @@
 //  Copyright © 2017 Alexandr Goncharov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Forecast {
     let date: Date
@@ -14,6 +14,22 @@ struct Forecast {
     let humidity: String
     let tempMax: Double
     let tempMin: Double
+    let image: WeatherImage
+    
+    enum WeatherImage: Int, CaseCountable {
+        case cloudy
+        case sunny
+        case rainy
+        
+        var uiImage: UIImage {
+            switch self {
+            case .cloudy: return #imageLiteral(resourceName: "Cloudy")
+            case .sunny: return #imageLiteral(resourceName: "Sunny")
+            case .rainy: return #imageLiteral(resourceName: "Rainy")
+            }
+        }
+        
+    }
 }
 
 
@@ -35,5 +51,13 @@ extension Forecast {
         self.humidity = humidity.stringValue
         self.tempMax = tempMax
         self.tempMin = tempMin
+        image = WeatherImage.allCases.randomElement
+    }
+}
+
+extension Forecast {
+    var dayName: String {
+        let dayNumber = NSCalendar.current.component(.weekday, from: date)
+        return DateFormatter().weekdaySymbols[dayNumber - 1]
     }
 }

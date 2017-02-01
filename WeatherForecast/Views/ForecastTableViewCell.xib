@@ -22,7 +22,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D4P-Z7-wcC">
                         <rect key="frame" x="10" y="10" width="100" height="100"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="100" id="L7C-Uv-9uc"/>
+                            <constraint firstAttribute="height" priority="900" constant="100" id="L7C-Uv-9uc"/>
                             <constraint firstAttribute="width" secondItem="D4P-Z7-wcC" secondAttribute="height" multiplier="1:1" id="bKw-4I-aP8"/>
                         </constraints>
                     </imageView>
