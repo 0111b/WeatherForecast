@@ -20,21 +20,21 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D4P-Z7-wcC">
-                        <rect key="frame" x="5" y="10" width="100" height="100"/>
+                        <rect key="frame" x="10" y="10" width="100" height="100"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="100" id="L7C-Uv-9uc"/>
                             <constraint firstAttribute="width" secondItem="D4P-Z7-wcC" secondAttribute="height" multiplier="1:1" id="bKw-4I-aP8"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zte-NS-dIv">
-                        <rect key="frame" x="115" y="43" width="224" height="34"/>
+                        <rect key="frame" x="120" y="43" width="219" height="34"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="D4P-Z7-wcC" firstAttribute="leading" secondItem="1zI-vQ-ERO" secondAttribute="leading" constant="5" id="O4r-U6-e73"/>
+                    <constraint firstItem="D4P-Z7-wcC" firstAttribute="leading" secondItem="1zI-vQ-ERO" secondAttribute="leading" constant="10" id="O4r-U6-e73"/>
                     <constraint firstItem="zte-NS-dIv" firstAttribute="centerY" secondItem="1zI-vQ-ERO" secondAttribute="centerY" id="R2H-4D-inS"/>
                     <constraint firstAttribute="bottom" secondItem="D4P-Z7-wcC" secondAttribute="bottom" constant="10" id="Rs1-GB-fMn"/>
                     <constraint firstItem="zte-NS-dIv" firstAttribute="leading" secondItem="D4P-Z7-wcC" secondAttribute="trailing" constant="10" id="a4l-kJ-1R0"/>

@@ -68,12 +68,13 @@ final class FeedViewController: UIViewController {
     }
     
     private func update(for state: State) {
+        errorView?.isHidden = true
         switch state {
         case .loading:
             reloadData()
-        case .none:
-            break
         case .error:
+            errorView?.isHidden = false
+        case .none:
             break
         }
     }
@@ -83,6 +84,7 @@ final class FeedViewController: UIViewController {
         return items[indexPath.row]
     }
     
+    @IBOutlet private weak var errorView: UILabel?
     @IBOutlet private(set) weak var tableView: UITableView?
     private let request: API.DailyForecast
     fileprivate unowned let navigationCoordinator: WeatherFeedCoordinator

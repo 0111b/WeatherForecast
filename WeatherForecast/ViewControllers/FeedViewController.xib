@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedViewController" customModule="WeatherForecast" customModuleProvider="target">
             <connections>
+                <outlet property="errorView" destination="jAH-Op-3vq" id="4Vl-Fw-8qh"/>
                 <outlet property="tableView" destination="gqC-bE-A6l" id="tfd-lG-SnY"/>
                 <outlet property="view" destination="X2E-rM-kx9" id="9AM-lJ-M2K"/>
             </connections>
@@ -28,13 +29,27 @@
                         <outlet property="delegate" destination="-1" id="99Z-qq-vkX"/>
                     </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error during forecast update" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAH-Op-3vq">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.56916202910958902" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="0m5-qv-JzJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="jAH-Op-3vq" secondAttribute="bottom" id="3Hh-1t-QEw"/>
                 <constraint firstItem="gqC-bE-A6l" firstAttribute="leading" secondItem="X2E-rM-kx9" secondAttribute="leading" id="8jd-06-reV"/>
                 <constraint firstItem="gqC-bE-A6l" firstAttribute="top" secondItem="X2E-rM-kx9" secondAttribute="top" id="LEI-tY-0FU"/>
                 <constraint firstAttribute="trailing" secondItem="gqC-bE-A6l" secondAttribute="trailing" id="Sw0-ee-Bf0"/>
                 <constraint firstAttribute="bottom" secondItem="gqC-bE-A6l" secondAttribute="bottom" id="TYF-jc-1Ym"/>
+                <constraint firstItem="jAH-Op-3vq" firstAttribute="leading" secondItem="X2E-rM-kx9" secondAttribute="leading" id="XCU-iP-czm"/>
+                <constraint firstAttribute="trailing" secondItem="jAH-Op-3vq" secondAttribute="trailing" id="aoB-NQ-lB6"/>
             </constraints>
             <point key="canvasLocation" x="54" y="89"/>
         </view>
