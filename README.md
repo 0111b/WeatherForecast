@@ -6,3 +6,8 @@ Sample weather forecast app.
 
 
 #Assumtions and 
+
+
+#TODO's:
+- Add unit tests
+- Add integration tests
