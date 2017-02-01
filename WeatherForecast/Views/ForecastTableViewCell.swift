@@ -19,5 +19,21 @@ class ForecastTableViewCell: UITableViewCell {
         let dayNumber = NSCalendar.current.component(.weekday, from: forecast.date)
         let dayName = DateFormatter().weekdaySymbols[dayNumber - 1]
         captionLabel?.text = dayName
+        weatherImageView?.image = WeatherImage.allCases.randomElement.image
+    }
+    
+    enum WeatherImage: Int, CaseCountable {
+        case cloudy
+        case sunny
+        case rainy
+        
+        var image: UIImage {
+            switch self {
+            case .cloudy: return #imageLiteral(resourceName: "Cloudy")
+            case .sunny: return #imageLiteral(resourceName: "Sunny")
+            case .rainy: return #imageLiteral(resourceName: "Rainy")
+            }
+        }
+        
     }
 }
