@@ -11,3 +11,4 @@ Sample weather forecast app.
 #TODO's:
 - Add unit tests
 - Add integration tests
+- (Optional) add log system
