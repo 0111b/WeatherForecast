@@ -21,6 +21,8 @@
 		E6CA03801E424CF800EFF4BB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA037F1E424CF800EFF4BB /* API.swift */; };
 		E6CA03821E42541700EFF4BB /* NetworkActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA03811E42541700EFF4BB /* NetworkActivityIndicatorManager.swift */; };
 		E6CA03841E4254C600EFF4BB /* FetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA03831E4254C600EFF4BB /* FetchResult.swift */; };
+		E6CA03861E42682A00EFF4BB /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA03851E42682A00EFF4BB /* ForecastTableViewCell.swift */; };
+		E6CA03881E42686100EFF4BB /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6CA03871E42686100EFF4BB /* ForecastTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		E6CA037F1E424CF800EFF4BB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		E6CA03811E42541700EFF4BB /* NetworkActivityIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		E6CA03831E4254C600EFF4BB /* FetchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResult.swift; sourceTree = "<group>"; };
+		E6CA03851E42682A00EFF4BB /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		E6CA03871E42686100EFF4BB /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 		E6CA036F1E41F15F00EFF4BB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E6CA03851E42682A00EFF4BB /* ForecastTableViewCell.swift */,
+				E6CA03871E42686100EFF4BB /* ForecastTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6CA03881E42686100EFF4BB /* ForecastTableViewCell.xib in Resources */,
 				E6CA036C1E418E4400EFF4BB /* LaunchScreen.storyboard in Resources */,
 				E6CA036B1E418B6000EFF4BB /* FeedViewController.xib in Resources */,
 				E6CA03511E4179AD00EFF4BB /* Assets.xcassets in Resources */,
@@ -205,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6CA03861E42682A00EFF4BB /* ForecastTableViewCell.swift in Sources */,
 				E6CA03651E4181B800EFF4BB /* NavigationCooridator.swift in Sources */,
 				E6CA03751E420E8F00EFF4BB /* Common.swift in Sources */,
 				E6CA03671E41829B00EFF4BB /* WeatherFeedCoordinator.swift in Sources */,

@@ -10,6 +10,8 @@ import UIKit
 
 final class FeedViewController: UIViewController {
     
+    //TODO: implement generic cell loading
+    
     init(coordinator: WeatherFeedCoordinator, city: String, limit: Int) {
         navigationCoordinator = coordinator
         request = API.DailyForecast(city: city, limit: limit)        
@@ -20,17 +22,81 @@ final class FeedViewController: UIViewController {
         fatalError("\(#function) is not implemented")
     }
     
+    private enum State {
+        case error
+        case loading
+        case none
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = request.city
-        navigationCoordinator.fetcher.fetch(request: request) { result in
-            print(result)
+        
+        let refreshControl = UIRefreshControl()
+        self.refreshControl = refreshControl
+        let refreshTitle = NSLocalizedString("Updating forecast", comment: "Feed pull to refresh caption")
+        refreshControl.attributedTitle = NSAttributedString(string: refreshTitle)
+        refreshControl.addTarget(self, action: .askForRefresh, for: .valueChanged)
+        tableView?.addSubview(refreshControl)
+        
+        tableView?.register(UINib(nibName: ForecastTableViewCell.cellId, bundle: Bundle.main), forCellReuseIdentifier: ForecastTableViewCell.cellId)
+        
+        state = .loading
+    }
+    
+    @IBAction func didTriggerRefresh() {
+        state = .loading
+    }
+    
+    private func reloadData() {
+        refreshControl?.beginRefreshing()
+        navigationCoordinator.fetcher.fetch(request: request) { [weak self] result in
+            guard let this = self else { return }
+            defer { this.refreshControl?.endRefreshing() }
+            switch result {
+            case .success(let items):
+                this.items = items
+                this.tableView?.reloadData()
+                this.state = .none
+            case .failure(let error):
+                print(error)
+                this.state = .error
+            }
+            
         }
+    }
+    
+    private func update(for state: State) {
+        switch state {
+        case .loading:
+            reloadData()
+        case .none:
+            break
+        case .error:
+            break
+        }
+    }
+    
+    fileprivate func itemFor(indexPath: IndexPath) -> Forecast? {
+        guard indexPath.row < items.count else { return nil }
+        return items[indexPath.row]
     }
     
     @IBOutlet private(set) weak var tableView: UITableView?
     private let request: API.DailyForecast
     fileprivate unowned let navigationCoordinator: WeatherFeedCoordinator
+    private var refreshControl: UIRefreshControl?
+    private var state: State = .none {
+        didSet {
+            update(for: state)
+        }
+    }
+    fileprivate var items = [Forecast]()
+}
+
+private extension Selector {
+    static let askForRefresh = #selector(FeedViewController.didTriggerRefresh)
 }
 
 
@@ -38,11 +104,17 @@ final class FeedViewController: UIViewController {
 extension FeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError("\(#function) is not implemented")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ForecastTableViewCell.cellId, for: indexPath) as? ForecastTableViewCell,
+            let item = itemFor(indexPath: indexPath)
+            else {
+            fatalError("Could not load ForecastTableViewCell: \(indexPath)")
+        }
+        cell.configure(with: item)
+        return cell
     }
     
 }
