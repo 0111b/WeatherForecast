@@ -23,9 +23,12 @@ enum API {
                 "units" : "metric",
             ]
         }
-        var mapping: Mapping<Result> {
-            return { json in
-                return nil
+        var mapping: Mapping<Result> {            
+            return { response in
+                guard let json = response as? [String: Any],
+                    let rawItems = json["list"] as? [[String: Any]]
+                    else { return nil }
+                return rawItems.flatMap { Forecast(dictionary: $0) }
             }
         }
 
