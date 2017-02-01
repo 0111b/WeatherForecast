@@ -33,7 +33,7 @@ final class WeatherFeedCoordinator: NavigationCooridator {
     }
 
     func returnFromProductDetails() {
-        navigationController?.popToRootViewController(animated: true)
+        _ = navigationController?.popToRootViewController(animated: true)
     }
     
     func addChild(coordinator: NavigationCooridator) {
