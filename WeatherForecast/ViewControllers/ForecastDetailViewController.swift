@@ -26,9 +26,9 @@ final class ForecastDetailViewController: UIViewController {
         title = forecast.dayName
         weatherImageView?.image = forecast.image.uiImage
         descriptionLabel?.text = forecast.weatherDescription
-        maxLabel?.text = String.localizedStringWithFormat(NSLocalizedString("Hight: %f", comment: "ForecastDetailViewController tempMax"), forecast.tempMax)
-        minLabel?.text = String.localizedStringWithFormat(NSLocalizedString("Low: %f", comment: "ForecastDetailViewController tempMin"), forecast.tempMin)
-        humidityLabel?.text = String.localizedStringWithFormat(NSLocalizedString("Humidity: %@", comment: "ForecastDetailViewController humidity"), forecast.humidity)
+        maxLabel?.text = String.localizedStringWithFormat(NSLocalizedString("Hight: %.1f °C", comment: "ForecastDetailViewController tempMax"), forecast.tempMax)
+        minLabel?.text = String.localizedStringWithFormat(NSLocalizedString("Low: %.1f °C", comment: "ForecastDetailViewController tempMin"), forecast.tempMin)
+        humidityLabel?.text = String.localizedStringWithFormat(NSLocalizedString("Humidity: %@%%", comment: "ForecastDetailViewController humidity"), forecast.humidity)
     }
 
     @IBAction func goBack(sender: Any) {
