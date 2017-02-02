@@ -32,7 +32,7 @@ final class WeatherFeedCoordinator: NavigationCooridator {
         navigationController?.pushViewController(detailsController, animated: true)
     }
 
-    func returnFromProductDetails() {
+    func returnFromForecastDetails() {
         _ = navigationController?.popToRootViewController(animated: true)
     }
     

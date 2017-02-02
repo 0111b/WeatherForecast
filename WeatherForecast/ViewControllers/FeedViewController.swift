@@ -79,7 +79,7 @@ final class FeedViewController: UIViewController {
         }
     }
     
-    fileprivate func itemFor(indexPath: IndexPath) -> Forecast? {
+    fileprivate func item(for indexPath: IndexPath) -> Forecast? {
         guard indexPath.row < items.count else { return nil }
         return items[indexPath.row]
     }
@@ -111,10 +111,8 @@ extension FeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ForecastTableViewCell.cellId, for: indexPath) as? ForecastTableViewCell,
-            let item = itemFor(indexPath: indexPath)
-            else {
-            fatalError("Could not load ForecastTableViewCell: \(indexPath)")
-        }
+            let item = item(for: indexPath)
+            else { fatalError("Could not load ForecastTableViewCell: \(indexPath)") }
         cell.configure(with: item)
         return cell
     }
@@ -125,7 +123,7 @@ extension FeedViewController: UITableViewDataSource {
 extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let forecast = itemFor(indexPath: indexPath) else { return }
+        guard let forecast = item(for: indexPath) else { return }
         navigationCoordinator.showForecastDetails(forecast)
     }
 }

@@ -32,7 +32,7 @@ final class ForecastDetailViewController: UIViewController {
     }
 
     @IBAction func goBack(sender: Any) {
-        navigationCoordinator.returnFromProductDetails()
+        navigationCoordinator.returnFromForecastDetails()
     }
     
     fileprivate unowned let navigationCoordinator: WeatherFeedCoordinator
